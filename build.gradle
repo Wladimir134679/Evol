@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.wdeath.game'
+version '1.0'
+
+sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+application{
+    mainClassName = "com.wdeath.game.evol.MainApp"
+}
+
+dependencies {
+    compile project(":engine-game-swing")
+    compile project(":engine-ai")
+}
